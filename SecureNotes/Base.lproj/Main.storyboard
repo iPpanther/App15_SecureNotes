@@ -1,24 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a2L-ZV-wLt">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SecureNotes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NoteVC" customModule="SecureNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IAC-wc-HGw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" rowHeight="60" id="xtt-E1-VgE" customClass="NoteCell" customModule="SecureNotes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xtt-E1-VgE" id="Cjx-OO-2bU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockImage" translatesAutoresizingMaskIntoConstraints="NO" id="wKH-en-AYY">
+                                                    <rect key="frame" x="356" y="11" width="38" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="wKH-en-AYY" secondAttribute="height" multiplier="1:1" id="1SU-7l-qvf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Nx2-w0-fYE">
+                                                    <rect key="frame" x="20" y="11" width="328" height="38"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Nx2-w0-fYE" firstAttribute="top" secondItem="Cjx-OO-2bU" secondAttribute="topMargin" id="YZQ-1Y-voy"/>
+                                                <constraint firstItem="Nx2-w0-fYE" firstAttribute="leading" secondItem="Cjx-OO-2bU" secondAttribute="leadingMargin" id="Ye5-vM-xr0"/>
+                                                <constraint firstItem="wKH-en-AYY" firstAttribute="leading" secondItem="Nx2-w0-fYE" secondAttribute="trailing" constant="8" id="hD2-75-cL0"/>
+                                                <constraint firstItem="wKH-en-AYY" firstAttribute="trailing" secondItem="Cjx-OO-2bU" secondAttribute="trailingMargin" id="nD7-mR-EyJ"/>
+                                                <constraint firstItem="wKH-en-AYY" firstAttribute="top" secondItem="Cjx-OO-2bU" secondAttribute="topMargin" id="nEd-VE-ZMM"/>
+                                                <constraint firstItem="Nx2-w0-fYE" firstAttribute="bottom" secondItem="Cjx-OO-2bU" secondAttribute="bottomMargin" id="qaZ-fe-GHj"/>
+                                                <constraint firstItem="wKH-en-AYY" firstAttribute="bottom" secondItem="Cjx-OO-2bU" secondAttribute="bottomMargin" id="xug-1h-han"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lockImageView" destination="wKH-en-AYY" id="Zjq-ht-zHw"/>
+                                            <outlet property="messageLbl" destination="Nx2-w0-fYE" id="hyH-gd-MdT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IAC-wc-HGw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MtK-Ko-1Bb"/>
+                            <constraint firstAttribute="bottom" secondItem="IAC-wc-HGw" secondAttribute="bottom" id="MtR-Af-wxi"/>
+                            <constraint firstItem="IAC-wc-HGw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Prv-i9-53i"/>
+                            <constraint firstItem="IAC-wc-HGw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yy7-Y3-S6e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="SecureNotes" id="QYL-3C-JeQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Mfi-JL-Xlf">
+                            <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="IAC-wc-HGw" id="svZ-57-5pp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Note DetailVC-->
+        <scene sceneID="dTQ-xW-R7s">
+            <objects>
+                <viewController storyboardIdentifier="NoteDetailVC" id="TXe-Rg-evf" customClass="NoteDetailVC" customModule="SecureNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="edM-eY-CbG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmo-Tn-ooR">
+                                <rect key="frame" x="20" y="802" width="374" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fva-OK-ntX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="LOCK NOTE">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="lockNoteBtnWasPressed:" destination="TXe-Rg-evf" eventType="touchUpInside" id="yfC-bA-8zj"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GdL-GB-SGM">
+                                <rect key="frame" x="20" y="44" width="374" height="758"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="39q-NG-crJ" firstAttribute="trailing" secondItem="mmo-Tn-ooR" secondAttribute="trailing" constant="20" id="0kX-q2-Hl4"/>
+                            <constraint firstItem="mmo-Tn-ooR" firstAttribute="leading" secondItem="39q-NG-crJ" secondAttribute="leading" constant="20" id="BFK-VR-5dy"/>
+                            <constraint firstItem="GdL-GB-SGM" firstAttribute="leading" secondItem="39q-NG-crJ" secondAttribute="leading" constant="20" id="FVM-sG-6Yx"/>
+                            <constraint firstItem="GdL-GB-SGM" firstAttribute="top" secondItem="39q-NG-crJ" secondAttribute="top" id="gTu-cC-Z4Q"/>
+                            <constraint firstItem="39q-NG-crJ" firstAttribute="trailing" secondItem="GdL-GB-SGM" secondAttribute="trailing" constant="20" id="lb2-mA-4E3"/>
+                            <constraint firstItem="mmo-Tn-ooR" firstAttribute="top" secondItem="GdL-GB-SGM" secondAttribute="bottom" id="nv2-Fd-Q5h"/>
+                            <constraint firstItem="mmo-Tn-ooR" firstAttribute="bottom" secondItem="39q-NG-crJ" secondAttribute="bottom" id="rUd-zl-r9Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="39q-NG-crJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="noteTextView" destination="GdL-GB-SGM" id="bRi-uk-spS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ed-Rn-LEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802.8985507246377" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ahi-7D-ixs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a2L-ZV-wLt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2iQ-vO-nXe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                            <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kfD-PS-drr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNx-3t-pEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lockImage" width="30" height="30"/>
+    </resources>
 </document>
